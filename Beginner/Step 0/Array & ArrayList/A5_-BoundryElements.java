@@ -1,9 +1,13 @@
-//Boundary elemnts print and tell conditin for right and left matrix
+//Boundary elemnts print and tell conditin for right and left diagonal
 /*
 00 01 02 03
 10 11 12 13
 20 21 22 23
 30 31 32 33  
+
+left diad (i==j)
+right diag (i+j==row-1)  
+if(i+j==row-1 && i!=j)  //if distinct  
 */
 public class MyClass {
     public static void main(String args[]) {
