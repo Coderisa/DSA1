@@ -3,7 +3,8 @@
 00 01 02 03
 10 11 12 13
 20 21 22 23
-30 31 32 33  */
+30 31 32 33  
+*/
 public class MyClass {
     public static void main(String args[]) {
      int [][] arr={{1,2,3,4},{5,6,7,8},{6,7,8,9}};
