@@ -1,4 +1,4 @@
-//Boundary elemnts print
+//Boundary elemnts print and tell conditin for right and left matrix
 /*
 00 01 02 03
 10 11 12 13
