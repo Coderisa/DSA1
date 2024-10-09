@@ -1,0 +1,51 @@
+//Transpose of a matrix
+/*
+00 01 02 03          00  10  20  
+10 11 12 13          01  11  12
+20 21 22 23          02  21  22
+                     03  31  32
+Just interchange row and column
+*/ 
+
+import java.util.Scanner;
+class xyz
+  {
+    public static void main(String args[])
+    {
+      Scanner sc=new Scanner (System.in);
+      {
+        System.out.println("Enter the row and column size ");
+        int r=sc.nextInt();
+        int c=sc.nextInt();
+        int arr[][]=new int [r][c];//Array declaration
+         int arr[][]=new int [c][r];
+        System.out.println("Enetr the values for 2 -D array");
+        for(int i=0;i<r;i++)
+          {
+            for(int j=0;j<c ;j++)
+              {
+                arr[i][j]=sc.next Int();
+                System.out.print(arr[i][j]);
+              }System.out.println();
+          }
+        //Transpose
+       for(int i=0;i<r;i++)
+          {
+            for(int j=0;j<c ;j++)
+              {
+                tarr[j][i]=arr[i][j];
+              }
+          }
+        //printing transpose of array
+         for(int i=0;i<r;i++)
+          {
+            for(int j=0;j<c ;j++)
+              {
+                
+                System.out.print(tarr[i][j]);
+              }System.out.println();
+          }
+      }
+    }
+        
+          
