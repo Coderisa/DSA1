@@ -4,7 +4,7 @@ class Solution {
     int l=t.length();
     int sum1=0,sum2=0;
       
-    for (int i=0;i<=l-2;i++)
+    for (int i=0;i<=t.length()-2;i++)
     {
         sum1+=s.charAt(i);
         
