@@ -2,19 +2,20 @@ class Solution {
     public char findTheDifference(String s, String t)
      {
     int l=t.length();
-    char p,q;int m=0,su=0;
+    char p,q;int sum1=0,sum2=0;
       
     for (int i=0;i<=l-2;i++)
     {
-        q=s.charAt(i);
-        m+=q;
-        p=t.charAt(i);
-        su+=p;
+        sum1+=s.charAt(i);
+        
+       
+       sum2+=t.charAt(i);
+        
     }
-    su=su+t.charAt(l-1);
+    sum2=sum2+t.charAt(l-1);
     
     
-    return (char)(su-m);
+    return (char)(sum2-sum1);
 
     }
 }
