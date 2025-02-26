@@ -26,4 +26,4 @@ class Solution {
         return "";
     }
 }
- 
+ //In Java, characters are treated as their ASCII (or Unicode) values when used in arithmetic operations. For instance, the ASCII value of '5' is 53, so num.charAt(i) % 2 calculates 53 % 2, which is 1 (since 53 is odd).
