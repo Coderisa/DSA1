@@ -2,7 +2,7 @@ class Solution {
     public char findTheDifference(String s, String t)
      {
     int l=t.length();
-    char p,q;int sum1=0,sum2=0;
+    int sum1=0,sum2=0;
       
     for (int i=0;i<=l-2;i++)
     {
