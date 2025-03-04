@@ -17,13 +17,14 @@ class Solution {
         // If ans remain's Integer.MAX_VALUE then their is no unique character
         return ans==Integer.MAX_VALUE?-1:ans;
     }   
-} /*
+} /*-isme agar length10^5 hui tab O(10^5)+O(10^5)-<in worst case
 class Solution {
     public int firstUniqChar(String s) {
         //bina ek baar traverse kare bina to mughe nhi pta chale ga ki kon sa elemnt aisa hai jpo repeat nhi hua hai
         HashMap<Character,Integer>mp=new HashMap <>();
         for(int i=0;i<s.length();i++)
           mp.put(s.charAt(i),mp.getOrDefault(s.charAt(i),0)+1);//1 ka matlb hai ki sirf ek baar aya hai
+       
         for(int i=0;i<s.length();i++){
           if (mp.get(s.charAt(i))==1)  
           return i;}
