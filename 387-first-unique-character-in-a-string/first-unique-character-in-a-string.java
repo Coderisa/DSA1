@@ -9,8 +9,8 @@ class Solution {
             // through this we will get all index's which are occured once
             // but our answer is lowest index
             int index = s.indexOf(c);
-            if(index!=-1&&index==s.lastIndexOf(c)){
-                ans = Math.min(ans,index);
+            if(index!=-1&&index==s.lastIndexOf(c)){//if it exist and only once
+                ans = Math.min(ans,index);//finding out the fits elemnt that occcurs once
             }
         }
 
