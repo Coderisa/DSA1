@@ -12,3 +12,9 @@ class Solution {
         return c;
     }
 }
+/*
+ for(int i : nums){
+            cnt += map.getOrDefault(i - k, 0) + map.getOrDefault(i + k, 0);
+            map.put(i, map.getOrDefault(i, 0) + 1);
+        }
+        */
