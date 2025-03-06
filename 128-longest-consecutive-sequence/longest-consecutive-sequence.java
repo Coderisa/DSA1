@@ -21,7 +21,7 @@ class Solution {
 
         return longest;        
     }
-}
+}//both below shoew time limit exceeded
 /*class Solution {
     public int longestConsecutive(int[] nums) {
         HashMap <Integer,Integer>mp=new HashMap<>();
@@ -32,8 +32,10 @@ class Solution {
         for(int i:nums){
             if(!mp.containsKey(i-1)){
               int count=1;
+
               while(mp.containsKey(i+count)){
                 count++;
+
                 mp.put(i,mp.get(i)-1);}
               max=Math.max(max,count);  
 
