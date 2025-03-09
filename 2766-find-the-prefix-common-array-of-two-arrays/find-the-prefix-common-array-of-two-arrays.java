@@ -15,7 +15,19 @@ class Solution {
     return ans;
     }
 }
+//or
+/*
+Set<Integer> set = new HashSet<>();
+        int[] res = new int[A.length];
+        for(int i = 0; i<A.length; i++){
+            set.add(A[i]);
+            set.add(B[i]);
+            res[i] = 2*(i+1) - set.size();
+        }
+        return res;
+*/
 
+      //Brute
         /*int ans[]=new int[A.length];//in java initialize all elemnts with 0
         HashSet<Integer>mp=new HashSet<>();
         int count ;
