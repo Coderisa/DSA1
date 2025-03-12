@@ -34,7 +34,7 @@ class Solution {
         int start = 0;          // Start of the search range
         int end = nums.length - 1; // End of the search range
         int ans = nums.length;  // Variable to store the index of the first positive number
-
+      //very imp ans ko -1 mt rakhna
         while (start <= end) {
             int mid = (start + end) / 2; // Find the middle index
             if (nums[mid] > 0) {         // If the middle element is positive
