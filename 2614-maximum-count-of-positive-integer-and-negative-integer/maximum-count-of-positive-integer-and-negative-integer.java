@@ -41,3 +41,11 @@ class Solution {
         return ans ;
     }
 }
+/* -BRUTE FORCE
+ int max=0; int i=0,p=0,n=0;
+  while(i<nums.length) {
+     if (nums[i]>0) p++;
+      if (nums[i]<0) n++;
+       } return Math.max(p,n);
+        } 
+        } */
