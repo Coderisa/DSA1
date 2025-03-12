@@ -15,3 +15,20 @@ class Solution {
         return max; // Return the maximum average
     }
 }
+/*
+class Solution {
+     public double findMaxAverage(int[] nums, int k) { 
+        double sum=0.0,max=0.0,avg=0.0;
+         int l=0,r=0;
+          while(r<nums.length){ 
+            sum+=nums[r];
+             if(r-l+1 ==k){
+                 avg=sum/4.0; 
+                 max=Math.max(max,avg);
+                  sum=sum-nums[l]; l++;
+                   } r++; 
+                   }
+                    return avg;
+                     } }
+
+*/
