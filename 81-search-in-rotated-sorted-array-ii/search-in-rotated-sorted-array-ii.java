@@ -7,6 +7,15 @@ class Solution {
         while(b<=e){
             while(b<e &&nums[b]==nums[b+1]) b++;//to remove duplacate elements from start
             while(b<e && nums[e]==nums[e-1])e--;//,, from end
+             
+                You need to do what I did above because you'll fail in case like
+                [1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1]
+                2
+                Here, the nums[mid] <= nums[r] and
+                and we will cut down the right half but our pivot lies there
+                So, make it a RULE, whenever there are duplicate elements and you need to to something
+                like Binary Search, you need to ignore duplicates like done above
+                Similar Qn : "Smallest element in a rotated sorted array with duplicates"
             
             int mid=b+(e-b)/2;
             if(target==nums[mid]){
