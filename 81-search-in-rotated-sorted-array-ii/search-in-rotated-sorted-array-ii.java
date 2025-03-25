@@ -7,6 +7,7 @@ class Solution {
         while(b<=e){
             while(b<e &&nums[b]==nums[b+1]) b++;//to remove duplacate elements from start
             while(b<e && nums[e]==nums[e-1])e--;//,, from end
+            
             int mid=b+(e-b)/2;
             if(target==nums[mid]){
             return true;}
