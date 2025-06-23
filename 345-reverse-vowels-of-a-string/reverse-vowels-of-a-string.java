@@ -51,3 +51,7 @@ double[] → default values are 0.0
 
 }
 }*/
+/* Anothr method to check for vowels 
+public static boolean isVowel(char c) {
+  return "AEIOUaeiou".indexOf(c) != -1;
+}*/
