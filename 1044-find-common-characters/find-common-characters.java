@@ -28,5 +28,19 @@ class Solution {
             }
         } return result;
         }
-}
+}/*REMBER TO WRITE THE  int freq[] = new int[26]; INSIDE THE FOR LOOP!
+Note-The JVM allocates a new array object on the heap every iteration.
+
+That object contains 26 int slots, each set to 0 — the default for primitive types.
+
+The old array isn’t cleared manually — it just goes out of scope and the reference disappears (unless you’ve stored it somewhere else).
+
+The loop’s reference freq now points to a completely new array.
+
+TIME COMPLEXITY-O(n * k + c)
+n be the number of words
+
+k be the average length of each word
+
+c be the number of characters ultimately added to the result*/
        
