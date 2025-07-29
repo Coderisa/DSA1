@@ -5,7 +5,7 @@ class Solution {
             numSet.add(num);
         }
 
-        int longest = 0;
+        int longest = 0;//Integer.MIN_VALUE;
 
         for (int num : numSet) {
             if (!numSet.contains(num - 1)) {
