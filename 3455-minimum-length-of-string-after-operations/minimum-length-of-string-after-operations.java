@@ -13,7 +13,7 @@ public int minimumLength(String s) {
     }
 
     return s.length() - del;
-}}
+}}//Same soln usinh map
 /*
 
 class Solution {
