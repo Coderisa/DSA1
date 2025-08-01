@@ -1,5 +1,18 @@
 class Solution {
     public int minimumLength(String s) {
+        int freq[]=new int[26];int del=0;
+
+for(int i=0; i< s.length(); i++){
+    freq[s.charAt(i) - 'a']++;
+
+    if(freq[s.charAt(i)-'a']==3){
+        freq[s.charAt(i)-'a']-=2;
+    del+=2;}
+}
+return (s.length()-del);
+    }
+}
+        /*
         int freq[]=new int[26];
         int r=0;
         for(char ch: s.toCharArray())
@@ -14,4 +27,4 @@ class Solution {
         }   
         return r;
     }
-}
+}*/
