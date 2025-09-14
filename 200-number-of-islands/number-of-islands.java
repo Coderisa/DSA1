@@ -1,4 +1,5 @@
-class Solution {
+ /*
+ class Solution {
     int row,col;
     
     public int numIslands(char[][] grid) {
@@ -30,4 +31,48 @@ class Solution {
             
         }//dfs
 
-}
+}*/
+class Solution {
+    int row,col;
+    
+    public int numIslands(char[][] grid) {
+         row=grid.length; col=grid[0].length;
+        boolean vis[][]=new boolean[row][col];//false
+
+     int  count=0;
+       for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            if(grid[i][j]!='0' && !vis[i][j]){
+             bfs(i,j,grid,vis);
+             count++;
+            }   
+        }
+       }
+       return count;
+    }
+    void bfs(int r, int c, char[][] grid, boolean vis[][]){
+        Queue<int []>q=new LinkedList<>();
+        q.add(new int[]{r,c});
+        vis[r][c]=true;
+
+        while(!q.isEmpty()){
+            int node[]=q.poll();
+            int rows=node[0];int cols=node[1];
+            int adjList[][]={{rows-1,cols},{rows+1,cols},{rows,cols+1},{rows,cols-1}};
+            //adding neighbours to queue
+
+            for(int neighbours[]:adjList){
+                int rr=neighbours[0]; int cc=neighbours[1];
+
+                if(rr<0||rr>=row|| cc<0 ||cc>=col||vis[rr][cc]==true||grid[rr][cc]=='0')
+                continue;
+
+                q.offer(new int[]{rr,cc});
+                vis[rr][cc]=true;
+                
+            }
+
+        }
+
+    }
+}//class
