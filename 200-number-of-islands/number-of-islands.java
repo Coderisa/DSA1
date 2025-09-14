@@ -76,3 +76,24 @@ class Solution {
 
     }
 }//class
+/* can also use
+ void bfs(int r, int c, char[][] grid, boolean[][] vis) {
+        Queue<int[]> q = new LinkedList<>();
+        q.offer(new int[]{r, c});
+        vis[r][c] = true;
+
+        int[][] directions = {{-1,0}, {1,0}, {0,1}, {0,-1}};
+
+        while (!q.isEmpty()) {
+            int[] node = q.poll();
+            for (int[] dir : directions) {
+                int nr = node[0] + dir[0];
+                int nc = node[1] + dir[1];
+
+                if (nr >= 0 && nr < row && nc >= 0 && nc < col &&
+                    grid[nr][nc] == '1' && !vis[nr][nc]) {
+                    q.offer(new int[]{nr, nc});
+                    vis[nr][nc] = true;
+                }
+            }
+           */
