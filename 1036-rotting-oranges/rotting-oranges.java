@@ -34,14 +34,17 @@ class Solution {
                     
                     q.offer(new int[]{nr,nc});
                     grid[nr][nc]=2;//marked as visited
+                    //if level khatm hone ke pahle hi freshcount 0 ho jate hain then why 
+                    //should I wait to traverse the whole level
+                    freshCount --;
+                    if(freshCount==0)
+                    return time+1;
                     
                 }
                
             }
              time++;
-            freshCount-=q.size();
-            if(freshCount==0)
-            break;//no more rotten oranges
+           
            
         }//while
                 
