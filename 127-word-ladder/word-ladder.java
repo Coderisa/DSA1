@@ -5,7 +5,7 @@ class Solution {
 
         Queue<String> q = new LinkedList<>();
         q.offer(beginWord);
-        set.remove(beginWord);
+        set.remove(beginWord);//agr hoga to remove ho jayega
 
         int level = 1;
 
