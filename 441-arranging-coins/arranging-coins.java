@@ -1,6 +1,6 @@
 class Solution {
     public int arrangeCoins(int n) {
-        long b = 0, e = n;
+         /*long b = 0, e = n;
         long ans = 0;
         while (b <= e) {
             long mid = b + (e - b) / 2;
@@ -14,5 +14,12 @@ class Solution {
         }
         return (int) ans; // cast back to int
     }
-}//10^9
+}//10^9-
+/*Use long for mid and multiplication to avoid overflow.
+✅ Cast ans back to int at the end (since return type is int).
 
+             */
+return (int)(Math.sqrt(2 * (long)n +0.25) -0.5)   ;          
+
+    }
+}
