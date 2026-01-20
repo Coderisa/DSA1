@@ -1,12 +1,13 @@
 class Solution {
     public long repairCars(int[] ranks, int cars) {
-        long left = 1;
+        long left = 1; long result=-1;
         long right = 1L * max(ranks) * cars * cars;
         
         while (left <= right) {
             long mid = left + (right - left) / 2;
             
             if (canRepairAll(ranks, cars, mid)) {
+                result=mid;
                 right = mid-1;  // Try smaller time
             } else {
                 left = mid + 1;  // Need more time
