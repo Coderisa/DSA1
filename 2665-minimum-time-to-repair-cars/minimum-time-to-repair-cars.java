@@ -1,13 +1,13 @@
 class Solution {
     public long repairCars(int[] ranks, int cars) {
         long left = 1;
-        long right = 1L * min(ranks) * cars * cars;
+        long right = 1L * max(ranks) * cars * cars;
         
-        while (left < right) {
+        while (left <= right) {
             long mid = left + (right - left) / 2;
             
             if (canRepairAll(ranks, cars, mid)) {
-                right = mid;  // Try smaller time
+                right = mid-1;  // Try smaller time
             } else {
                 left = mid + 1;  // Need more time
             }
@@ -33,10 +33,10 @@ class Solution {
         return totalCars >= cars;
     }
     
-    private int min(int[] arr) {
-        int minVal = Integer.MAX_VALUE;
+    private int max(int[] arr) {
+        int minVal = Integer.MIN_VALUE;
         for (int num : arr) {
-            minVal = Math.min(minVal, num);
+            minVal = Math.max(minVal, num);
         }
         return minVal;
     }
