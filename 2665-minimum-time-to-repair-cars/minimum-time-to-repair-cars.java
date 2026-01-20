@@ -14,7 +14,7 @@ class Solution {
             }
         }
         
-        return left;
+        return result;
     }
     
     private boolean canRepairAll(int[] ranks, int cars, long time) {
