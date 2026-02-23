@@ -3,11 +3,11 @@ class Solution {
         long ans = 0;
         int minPosition = -1;
         int maxPosition = -1;
-        int leftBound = -1;
+        int culprit = -1;
 
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] < minK || nums[i] > maxK) {
-                leftBound = i;
+                culprit = i;
             }
 
             if (nums[i] == minK) {
@@ -18,7 +18,7 @@ class Solution {
                 maxPosition = i;
             }
 
-            int count = Math.min(minPosition, maxPosition) - leftBound;
+            int count = Math.min(minPosition, maxPosition) - culprit;
 
             if (count > 0) {
                 ans += count;
