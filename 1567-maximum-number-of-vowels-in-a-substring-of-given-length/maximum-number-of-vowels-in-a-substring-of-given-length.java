@@ -4,10 +4,10 @@ class Solution {
         while(j < k){
             if(isVowel( s.charAt(j) ) )
               c++;
-              max=Math.max(max,c);
-            j++;  
-            }
-          if( c==k) return c;
+            j++;  }
+             max=Math.max(max,c);
+            
+          if(max ==k) return max;
         for( j=k; j< s.length(); j++){
 
             //remove left most character freq from c if vowel
