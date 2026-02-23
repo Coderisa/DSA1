@@ -23,11 +23,7 @@ class Solution {
         return max;  
        
     }
-     boolean isVowel(char n) 
-        {
-            if( n=='a' || n=='e' || n=='i'|| n=='o'|| n=='u')
-             return true;
-            else
-             return false;
-        }
+     private boolean isVowel(char n) {
+         return "aeiou".indexOf(n) != -1; 
+         }
 }
