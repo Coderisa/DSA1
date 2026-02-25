@@ -20,32 +20,3 @@ class Solution {
 }
 
 
-/*class Solution {
-    public int maxConsecutiveAnswers(String answerKey, int k) {
-        int i= 0, j=0, countF=0, countT=0, max=0;
-        while( j < answerKey.length()){
-            if (answerKey.charAt(j) == 'F') countF++;
-
-            while(countF > k){
-                if (answerKey.charAt(i) == 'F') countF--;
-                i++;
-            }
-            max=Math.max(max, j-i+1);
-            j++;
-        }
-  i= 0; j=0;
-         while( j < answerKey.length()){
-            if (answerKey.charAt(j) == 'T') countT++;
-
-            while(countT > k){
-                if (answerKey.charAt(i) == 'T') countT--;
-                i++;
-            }
-            max=Math.max(max, j-i+1);
-            j++;
-        }
-        return max;
-    }
-}*/
-
-
