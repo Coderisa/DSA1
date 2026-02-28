@@ -1,33 +1,36 @@
 /*
+ Company Tags                : Accolite, MentorGraphics, Adobe, Amazon, Directi, Goldman Sachs, Groupon,
+                                  InMobi, MakeMyTrip, Ola Cabs, One97, Oracle, Paytm, Polycom,
+                                  SAP Labs, Snapdeal, TinyOwl, Visa, Microsoft
+//Approach-1 O(m*n)
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
-        int i=0,j=matrix[0].length-1;
+        int m = matrix.length;
+        int n = matrix[0].length;
 
-        while(i<matrix.length ){
-            if (target==matrix[i][j])
-             return true;
-              if (target<matrix[i][j]){
-                int b=0,e=j;
-                while(b<=e){
-                    int mid=b+(e-b)/2;
-                    if(target==matrix[i][mid])
-                    return true;
-                    else if(target>matrix[i][mid])
-                    b=mid+1;
-                    else 
-                    e=mid-1;
-                }
-              }
+        int i = 0, j = n - 1;
+
+        while (i < m && j >= 0) {
+            if (matrix[i][j] > target) {
+                j--;
+            } else if (matrix[i][j] < target) {
                 i++;
-             }
-             return false;
+            } else {
+                return true;
             }
-        } */
+        }
+
+        return false;
+    }
+}
+*/
+
+
         //t-O(log(m*n))
         class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
-        int m=matrix.length,n=matrix[0].length;
-        int start=0,end=m*n-1;
+        int m=matrix.length, n=matrix[0].length;
+        int start=0, end=m*n-1;
         while(start<=end){
             int mid=start+ (end-start)/2;
             int row=mid/n;
