@@ -1,4 +1,4 @@
-class Solution {
+
     /*
     public boolean search(int[] nums, int target) {
         int b=0,e=nums.length-1;
@@ -33,6 +33,7 @@ class Solution {
         return false;
     }
 }*/
+/*
 //method 2-find pivot method
 public boolean binarysearch(int[] nums, int b, int e, int target) {
     while (b <= e) {
@@ -61,6 +62,7 @@ public boolean search(int[] nums, int target) {
 
 int pivot(int[] nums, int b, int e) {
     while (b < e) {
+        //SKIP DUPLICATES FROM LEFT AND RIGHT
         while (b < e && nums[b] == nums[b + 1]) {
             b++;
         }
@@ -77,3 +79,51 @@ int pivot(int[] nums, int b, int e) {
     return e; // Pivot index
 }
 }
+
+*/
+class Solution {
+    
+    public boolean search(int[] nums, int target) {
+        int pivot = findPivot(nums);
+       boolean ans = binaryS( pivot , nums.length-1 , nums, target);
+       if (ans == true) return true ;
+       else 
+       return binaryS( 0 ,pivot -1 , nums, target);
+
+       //OR  return binarySearch(nums, target, pivot, nums.length - 1) ||
+             //  binarySearch(nums, target, 0, pivot - 1);
+    }
+  int   findPivot(int []nums){
+    int l=0, r = nums.length -1;
+    while(l< r){
+        //SKIP DUPLICATES FROM LEFT AND RIGHT
+        while (l < r && nums[l] == nums[l + 1]) {
+            l++;
+        }
+        while (l < r && nums[r] == nums[r - 1]) {
+            r--;
+        }
+        int mid = l+(r -l)/2;
+        if(nums[mid] > nums[r])
+          l = mid+1; // pivot is in the right half
+      else
+          r=mid;                 // nums[mid] == nums[r], cannot decide, shrink range
+            
+  }
+   return l;
+  }
+boolean  binaryS(int  pivot ,int h ,int []nums,int  target){
+   int l= pivot , r = h;
+   while(l<= r){
+    int mid = l+(r-l)/2;
+    if(nums[mid]== target) return true;
+    else if( nums[mid] >target) r = mid -1;
+    else  l = mid+1;
+   } 
+   return false;
+}
+
+}
+
+
+
