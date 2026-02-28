@@ -25,7 +25,7 @@ public int search(int[] nums, int target) {
 }
 
 */
-/* /striver solution-do this 
+//striver solution-do this 
 class Solution {
     public int search(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
@@ -55,7 +55,7 @@ class Solution {
         
         return -1;
     }
-} */  // I found below method relatively easier
+}   // I found below method relatively easier
 //-love babbar solution -here we searched for the pivot element first and then applied bin search on array
 //[6, 7, 1, 2, 3, 4, 5] here pivot elelemt is 1 and index 2 
 /*
@@ -109,6 +109,7 @@ class Solution {
     }
 }
 */
+/*
 class Solution {
 public int search(int[] nums, int target) {
     int pivot = findPivot(  nums,  target);
@@ -145,4 +146,5 @@ int binaryS(int lo,int ro, int  []nums, int target) {
     return -1;
  }
 }
+*/
     
