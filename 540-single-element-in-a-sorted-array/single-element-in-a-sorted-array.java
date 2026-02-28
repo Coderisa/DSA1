@@ -9,10 +9,8 @@ class Solution {
                 r = mid;
             }
         }
+        return nums[l];
         // Check if l is a valid single element
-         if ((l == 0 || nums[l] != nums[l - 1]) && (l == nums.length - 1 || nums[l] != nums[l + 1])) { 
-            return nums[l]; } 
-        return -1; // Return -1 if no single element is found
         
     }
 }
