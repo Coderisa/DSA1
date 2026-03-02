@@ -1,7 +1,7 @@
 class Solution {
     public long minimumTime(int[] time, int totalTrips) {
         long l = 1;
-     long  r  = (long) Arrays.stream(time).min().getAsInt() * totalTrips;
+     long  r  = (long) Arrays.stream(time).min().getAsInt() * totalTrips;//can do usinf for loop too
         while( l < r){
             long mid = l+(r - l)/2;
              if (possible(time, mid, totalTrips)) {
