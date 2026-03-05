@@ -15,7 +15,7 @@
  */
 class Solution {
     public int maxDepth(TreeNode root) {
-        if(root ==null) return 0;
+        if(root ==null) return 0;  //it is saying num of nodes which is +1 edgeshence return 0 not -1
         int lHeight=maxDepth(root.left);
         int rHeight=maxDepth(root.right);
         
