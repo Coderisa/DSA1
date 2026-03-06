@@ -1,4 +1,32 @@
 class Solution {
+    // Helper function to calculate height of a tree
+    public int height(TreeNode root) {
+        if (root == null)
+            return 0;
+
+        int leftH = height(root.left);
+        int rightH = height(root.right);
+
+        return Math.max(leftH, rightH) + 1;
+    }
+
+    // Main function to check if tree is balanced
+    public boolean isBalanced(TreeNode root) {
+        if (root == null)
+            return true;
+
+        int leftH = height(root.left);
+        int rightH = height(root.right);
+
+        if (Math.abs(leftH - rightH) > 1)
+            return false;
+
+        return isBalanced(root.left) && isBalanced(root.right);
+    }
+}
+/*
+
+class Solution {
     public boolean isBalanced(TreeNode root) {
         return checkHeight(root) != -1;
     }
@@ -17,3 +45,4 @@ class Solution {
         return Math.max(left, right) + 1;
     }
 }
+*/
