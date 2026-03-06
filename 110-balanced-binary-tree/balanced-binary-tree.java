@@ -1,3 +1,4 @@
+//o(n^2) , o(h)
 class Solution {
     // Helper function to calculate height of a tree
     public int height(TreeNode root) {
@@ -25,6 +26,7 @@ class Solution {
     }
 }
 /*
+OPTIMAL APPROACH - O(N), O(h)
 
 class Solution {
     public boolean isBalanced(TreeNode root) {
