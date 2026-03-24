@@ -42,3 +42,52 @@ class Solution {
         return result;
     }
 }
+
+
+/*
+Brute force: Simple, but inefficient (O(n²)).
+
+Optimized (HashMap + HashSet): Efficient (O(n log n)), clean, and scalable.
+
+   import java.util.*;
+
+class Solution {
+    public List<List<Integer>> findWinners(int[][] matches) {
+        // Collect all players
+        Set<Integer> players = new HashSet<>();
+        for (int[] match : matches) {
+            players.add(match[0]); // winner
+            players.add(match[1]); // loser
+        }
+
+        List<Integer> notLost = new ArrayList<>();
+        List<Integer> oneLoss = new ArrayList<>();
+
+        // For each player, brute force count losses by scanning all matches
+        for (int player : players) {
+            int lossCount = 0;
+            for (int[] match : matches) {
+                if (match[1] == player) {
+                    lossCount++;
+                }
+            }
+
+            if (lossCount == 0) {
+                notLost.add(player);
+            } else if (lossCount == 1) {
+                oneLoss.add(player);
+            }
+        }
+
+        Collections.sort(notLost);
+        Collections.sort(oneLoss);
+
+        List<List<Integer>> result = new ArrayList<>();
+        result.add(notLost);
+        result.add(oneLoss);
+
+        return result;
+    }
+}
+
+*/
