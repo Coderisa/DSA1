@@ -89,5 +89,11 @@ class Solution {
         return result;
     }
 }
+Outer loop: Iterates over all players (p).
 
+Inner loop: For each player, scans all matches (n).
+
+Total time complexity: O(p·n) → worst case O(n²) if p ≈ n.
+
+Space complexity: O(p) for storing players and results.
 */
