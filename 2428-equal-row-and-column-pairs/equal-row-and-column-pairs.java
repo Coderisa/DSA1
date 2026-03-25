@@ -1,5 +1,5 @@
 import java.util.*;
-
+//T-o(N^2),  S-o(N^2)
 class Solution {
     public int equalPairs(int[][] grid) {
         int n = grid.length;
