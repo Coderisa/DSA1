@@ -5,7 +5,7 @@ class Solution {
         
         long sum = 0;
         int windowSize = 2 * k + 1;
-        if (windowSize > nums.length) return ans;
+        if (windowSize > nums.length) return ans;//remember
         
         for (int i = 0; i < windowSize; i++) {
             sum += nums[i];
