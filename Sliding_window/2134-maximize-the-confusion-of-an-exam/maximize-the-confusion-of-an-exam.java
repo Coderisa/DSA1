@@ -1,3 +1,4 @@
+//SLIDING WINDOW OPTIMIZED
 class Solution {
     public int maxConsecutiveAnswers(String answerKey, int k) {
         int i =0, maxF=0,maxT=0, f=0;
@@ -25,9 +26,48 @@ class Solution {
     }
 }
 
+//BRUTE FORCE
 
+class Solution {
+    public int maxConsecutiveAnswers(String answerKey, int k) {
+        // Find the maximum length we can get by changing to 'T'
+        int maxT = findMaxForChar(answerKey, k, 'T');
+        // Find the maximum length we can get by changing to 'F'
+        int maxF = findMaxForChar(answerKey, k, 'F');
+        
+        // Return the larger of the two
+        return Math.max(maxT, maxF);
+    }
 
-
+    private int findMaxForChar(String answerKey, int k, char target) {
+        int n = answerKey.length();
+        int maxLen = 0;
+        
+        // Try every possible start point for the substring
+        for (int i = 0; i < n; i++) {
+            int changesNeeded = 0;
+            
+            // Try every possible end point for the substring starting at 'i'
+            for (int j = i; j < n; j++) {
+                // If the character is not our target, we would need to change it
+                if (answerKey.charAt(j) != target) {
+                    changesNeeded++;
+                }
+                
+                // If the number of changes needed is within the limit, we have a valid substring
+                if (changesNeeded <= k) {
+                    int currentLength = j - i + 1;
+                    maxLen = Math.max(maxLen, currentLength);
+                } else {
+                    // If we exceed k, there's no point in extending this substring further
+                    // We can break the inner loop and try a new start point
+                    break;
+                }
+            }
+        }
+        return maxLen;
+    }
+}
 
 
 /*
