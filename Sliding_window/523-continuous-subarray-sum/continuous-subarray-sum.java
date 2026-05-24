@@ -3,32 +3,32 @@ import java.util.Map;
 
 class Solution {
     public boolean checkSubarraySum(int[] nums, int k) {
-        // Map<remainder, earliest index where this remainder appeared>
-        Map<Integer, Integer> remainderMap = new HashMap<>();
-        remainderMap.put(0, -1); // virtual prefix sum 0 before start
+        Map<Integer, Integer> mp = new HashMap<>();
+        mp.put(0, -1);          // virtual prefix sum 0 before start
+        int sum = 0;
         
-        int runningSum = 0;
         for (int i = 0; i < nums.length; i++) {
-            runningSum += nums[i];
+            sum += nums[i];
             
             int remainder;
             if (k == 0) {
-                // When k = 0, we need subarray sum exactly 0
-                // So we store the running sum itself as the "remainder"
-                remainder = runningSum;
+                // For k = 0, we need subarray sum exactly 0
+                // Use the running sum itself as the "remainder"
+                remainder = sum;
             } else {
-                remainder = runningSum % k;
-                // Ensure non-negative remainder (Java's % can be negative)
+                remainder = sum % k;
+                // Ensure non‑negative remainder (Java's % can be negative for negative numbers,
+                // but nums[i] >= 0 per constraints, so this is defensive)
                 if (remainder < 0) remainder += k;
             }
             
-            if (remainderMap.containsKey(remainder)) {
-                int prevIndex = remainderMap.get(remainder);
+            if (mp.containsKey(remainder)) {
+                int prevIndex = mp.get(remainder);
                 if (i - prevIndex >= 2) {
                     return true;
                 }
             } else {
-                remainderMap.put(remainder, i);
+                mp.put(remainder, i);
             }
         }
         return false;
