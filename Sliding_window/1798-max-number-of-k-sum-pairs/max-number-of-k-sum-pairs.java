@@ -1,16 +1,18 @@
+
 class Solution {
     public int maxOperations(int[] nums, int k) {
-        Arrays.sort(nums);int c=0;
-        int i=0, j= nums.length-1;
-       while(i<j){
-        int s=nums[i]+nums[j];
-        if(s==k){
-            c++;
-            i++;j--;
+        HashMap<Integer,Integer>mp=new HashMap<>();
+        int c=0;
+        for(int i=0 ;i< nums.length;i++){
+               int rem = k -nums[i];
+               if(mp.containsKey(rem)){
+                c++;
+                if(mp.get(rem)==1) mp.remove(rem);
+                else  { mp.put(rem,mp.getOrDefault(rem,0)-1);}
+               }
+               else
+               mp.put(nums[i],mp.getOrDefault(nums[i],0)+1);
         }
-        else if(s > k) j--;
-        else i++;
-       }
-       return c;
+        return c;
     }
 }
