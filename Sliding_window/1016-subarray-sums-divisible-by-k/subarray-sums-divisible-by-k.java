@@ -16,3 +16,5 @@ class Solution {
         return c;
     }
 }
+//proof for  if( rem <0) rem =rem+k;
+ //https://docs.google.com/document/d/1yemgZbDoE9ZWIS1MM7Cks4AFpv8Db4a8HD6Rc-Ekz34/edit?tab=t.0
