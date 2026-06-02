@@ -42,3 +42,27 @@ public class Solution {
         return key;
     }
 }
+/*
+class Solution {
+    List<TreeNode> ans = new ArrayList<>();
+
+    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+        
+        HashMap<String,Integer> map= new HashMap<>();
+        getSubTreeString(root,map);
+        return ans;
+    }
+
+    String getSubTreeString(TreeNode root,HashMap<String,Integer> map){
+        if(root==null)return "n";
+
+        String s= Integer.toString(root.val) + ","+getSubTreeString(root.left,map)+ ","+getSubTreeString(root.right,map);
+
+        if(map.containsKey(s) && map.get(s)==1){
+            ans.add(root);
+        }
+        map.put(s,map.getOrDefault(s,0)+1);
+
+        return s;
+    }
+}*/
