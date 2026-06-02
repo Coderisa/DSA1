@@ -23,3 +23,19 @@
     return r;
 }
  }
+ /* my prev wrong code
+ class Solution {
+    public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
+        if(root1==null && root2 == null) return null;
+      //wrong  TreeNode r;
+      int value;
+        if(root1!=null && root2!=null)value=root1.val+root2.val;
+        else if(root1!=null && root2==null)value=root1.val;
+        else value=root2.val;
+        TreeNode r = new TreeNode(value);
+        r.left=mergeTrees(root1.left,root2.left);
+        r.right=mergeTrees(root1.right,root2.right);
+        return r;
+    }
+}
+*/
