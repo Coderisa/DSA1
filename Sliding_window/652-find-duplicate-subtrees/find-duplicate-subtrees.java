@@ -18,6 +18,37 @@ import java.util.Map;
  *     }
  * }
  */
+ import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+class Solution {
+    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+        Map<String, Integer> map = new HashMap<>();
+        List<TreeNode> result = new ArrayList<>();
+        preorderSerialize(root, map, result);
+        return result;
+    }
+
+    private String preorderSerialize(TreeNode node, Map<String, Integer> map, List<TreeNode> result) {
+        if (node == null) {
+            return "null";    // represent null explicitly
+        }
+        // Preorder: root first, then left, then right
+        // Use parentheses to group subtrees: "val(left)(right)"
+        String leftStr = preorderSerialize(node.left, map, result);
+        String rightStr = preorderSerialize(node.right, map, result);
+        String key = node.val + "(" + leftStr + ")(" + rightStr + ")";
+        
+        map.put(key, map.getOrDefault(key, 0) + 1);
+        if (map.get(key) == 2) {
+            result.add(node);
+        }
+        return key;
+    }
+}
+ /*
 public class Solution {
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
         Map<String, Integer> map = new HashMap<>();   // Store serialization string and its occurrence count
