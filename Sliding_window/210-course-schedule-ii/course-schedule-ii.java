@@ -29,9 +29,9 @@ class Solution {
                     q.add(v);
             }
         }
-        if(c!= numCourses) return new int[0];
+        if(c!= numCourses) return new int[0];//cycle exist
         else
-        return ans;
+        return ans;//cycle not exist
 
     }
 }
