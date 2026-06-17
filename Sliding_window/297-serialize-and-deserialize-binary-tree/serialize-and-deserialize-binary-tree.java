@@ -7,7 +7,7 @@
  *     TreeNode right;
  *     TreeNode(int x) { val = x; }
  * }
- */
+ level order traversal */
 public class Codec {
 
     // Encodes a tree to a single string.
@@ -94,7 +94,7 @@ public class Codec {
 // Codec ser = new Codec();
 // Codec deser = new Codec();
 // TreeNode ans = deser.deserialize(ser.serialize(root));
- /*
+ /* preorder traversal 
 public class Codec {
 
     // Encodes a tree to a single string.
