@@ -22,3 +22,5 @@ class Solution {
         return answer;
     }
 }
+/* https://leetcode.com/discuss/post/5119937/prefix-sum-problems-by-c0d3m-08l9/#section-1 */
+/* https://leetcode.com/discuss/post/4023666/prefix-sum-questions-to-practice-by-anon-g2q1/ */
