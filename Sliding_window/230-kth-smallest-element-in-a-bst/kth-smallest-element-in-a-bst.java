@@ -26,17 +26,18 @@
 
 class Solution {
     private int count = 0;
-    int result =-1;
+    int result =-1;//we r using a neg value here as we know from the constraints that node.val can never be neg
     
 
     public int kthSmallest(TreeNode root, int k) {
-        if(root == null) return -1;
-       result= kthSmallest(root.left,k);
+        if(root == null) return -1;//to indicate that kth abhi tak nhi mila hai
+
+       result= kthSmallest(root.left,k);//we r not checking if (root.left!=null) as wven if it is null then it will return -1 not go further
        if(result != -1) return result;
 
        if(count +1 ==k)  return root.val;
        else 
-           count++;
+           count++;//update count
         
         result = kthSmallest(root.right,k);
         if(result != -1) return result;
