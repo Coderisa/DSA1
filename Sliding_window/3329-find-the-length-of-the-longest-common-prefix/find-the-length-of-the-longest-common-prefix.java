@@ -33,10 +33,7 @@ class TrieNode {
 
 class Solution {
 
-    public TrieNode getTrieNode() {
-        return new TrieNode();
-    }
-
+    // Insert a number into the Trie
     public void insert(int num, TrieNode root) {
         TrieNode crawl = root;
         String numStr = Integer.toString(num);
@@ -44,7 +41,8 @@ class Solution {
         for (char ch : numStr.toCharArray()) {
             int idx = ch - '0';
             if (crawl.children[idx] == null) {
-                crawl.children[idx] = getTrieNode();
+                // MERGED: Directly instantiate instead of calling getTrieNode()
+                crawl.children[idx] = new TrieNode(); 
             }
             crawl = crawl.children[idx];
         }
@@ -70,7 +68,8 @@ class Solution {
     }
 
     public int longestCommonPrefix(int[] arr1, int[] arr2) {
-        TrieNode root = getTrieNode();  // TRIE
+        // MERGED: Directly instantiate the root instead of calling getTrieNode()
+        TrieNode root = new TrieNode(); 
 
         // Insert all elements of arr1 into the trie
         for (int num : arr1) {
@@ -86,3 +85,37 @@ class Solution {
         return result;
     }
 }
+/*
+class Solution {
+    class Trie{
+        Trie[] map = new Trie[10];
+    }
+    public int longestCommonPrefix(int[] arr1, int[] arr2) {
+        Trie trie = new Trie();
+        for(int num: arr1){
+            Trie travel = trie;
+            String curr = Integer.toString(num);
+            for(char c: curr.toCharArray()){
+                if(travel.map[c-'0'] == null){
+                    travel.map[c-'0'] = new Trie();
+                }
+                travel = travel.map[c-'0'];
+            }
+        }
+        int answer = 0;
+        for(int num:arr2){
+            Trie travel = trie;
+            String curr = Integer.toString(num);
+            for(int i = 0; i < curr.length(); i++){
+                char c = curr.charAt(i);
+                if(travel.map[c-'0'] == null){
+                    break;
+                }
+                travel = travel.map[c-'0'];
+                answer = Math.max(answer,i+1);
+            }
+        }
+        return answer;
+    }
+}
+*/
