@@ -61,7 +61,7 @@ class Solution {
     }
 }
 */
-
+  /*
     
     // ==================== APPROACH 2: Recursive Reversal + Boundary Adjustment ====================
     // Helper to reverse nodes from 'head' up to (and including) 'rightNode'
@@ -119,10 +119,11 @@ class Solution {
     }
     }
     
-    /*
+    */
+    class Solution{
     
     // ==================== APPROACH 3: Using a Stack (One Pass) ====================
-    public ListNode reverseBetweenApproach3(ListNode head, int left, int right) {
+    public ListNode reverseBetween(ListNode head, int left, int right) {
         if (head == null || head.next == null) {
             return head;
         }
@@ -159,4 +160,3 @@ class Solution {
         return dummy.next;
     }
 }
-*/
