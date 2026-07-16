@@ -29,7 +29,7 @@
 Try drawing what happens in every step of the algorithm. I find this especially helpful with problems involving linked lists. Once I had a visual representation of what the reverse list algorithm did in each step (for each node), I was amazed at how simple it was. It also helps recalling the algorithm later as that picture gets stuck in your mind. So even if you don't recall the exact algo, you can still come up with it at the spot.*/
 
 
-
+/*
 class Solution {
     
     // ==================== APPROACH 1: Iterative In-Place Reversal ====================
@@ -60,10 +60,12 @@ class Solution {
         return dummy.next;
     }
 }
-/*
+*/
+
     
     // ==================== APPROACH 2: Recursive Reversal + Boundary Adjustment ====================
     // Helper to reverse nodes from 'head' up to (and including) 'rightNode'
+    class Solution{
     private ListNode reverse(ListNode head, ListNode rightNode) {
         if (head == null || head.next == null || head == rightNode) {
             return head;
@@ -74,7 +76,7 @@ class Solution {
         return last;
     }
     
-    public ListNode reverseBetweenApproach2(ListNode head, int left, int right) {
+    public ListNode reverseBetween(ListNode head, int left, int right) {
         ListNode leftNode = null;
         ListNode leftPrev = null;
         ListNode rightNode = null;
@@ -116,7 +118,7 @@ class Solution {
         return head;
     }
     }
-    */
+    
     /*
     
     // ==================== APPROACH 3: Using a Stack (One Pass) ====================
