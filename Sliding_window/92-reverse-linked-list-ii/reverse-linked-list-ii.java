@@ -15,7 +15,7 @@ class Solution {
         // Step 3: Reverse the sublist from left to right
         ListNode curr = prev.next;
         ListNode next = null;
-        for (int i = 0; i < right - left; i++) {
+        for (int i = left; i < right; i++) {
             next = curr.next;
             curr.next = next.next;
             next.next = prev.next;
@@ -25,3 +25,5 @@ class Solution {
         return dummy.next;
     }
 }
+/*
+Try drawing what happens in every step of the algorithm. I find this especially helpful with problems involving linked lists. Once I had a visual representation of what the reverse list algorithm did in each step (for each node), I was amazed at how simple it was. It also helps recalling the algorithm later as that picture gets stuck in your mind. So even if you don't recall the exact algo, you can still come up with it at the spot.*/
