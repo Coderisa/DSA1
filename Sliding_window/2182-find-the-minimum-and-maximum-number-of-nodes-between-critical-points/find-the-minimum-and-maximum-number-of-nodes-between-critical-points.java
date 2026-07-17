@@ -8,6 +8,7 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+ /*
 class Solution {
     public int[] nodesBetweenCriticalPoints(ListNode head) {
         if(head==null|| head.next==null|| head.next.next==null) return new int[]{-1,-1};
@@ -21,7 +22,7 @@ class Solution {
             if ((curr.val> prev.val && curr.val > curr.next.val)|| 
             (curr.val< prev.val && curr.val < curr.next.val) ){
              
-              if(adj.size()>=1) 
+              if(adj.size()>=1) //atleast1 node to hona hi chaiye tabhi you can compare.
                  min=Math.min(min, p-adj.get(adj.size()-1));
 
               adj.add(p);
@@ -36,5 +37,39 @@ class Solution {
         ans[1]= adj.get(adj.size() -1) - adj.get(0);
         return ans;
 
+    }
+}
+*/
+// A more polished version
+class Solution {
+    public int[] nodesBetweenCriticalPoints(ListNode head) {
+        if (head == null || head.next == null || head.next.next == null) {
+            return new int[]{-1, -1};
+        }
+
+        ListNode prev = head;
+        ListNode curr = head.next;
+        int index = 1; // position of curr
+        ArrayList<Integer> criticalPoints = new ArrayList<>();
+        int minDist = Integer.MAX_VALUE;
+
+        while (curr.next != null) {
+            if ((curr.val > prev.val && curr.val > curr.next.val) ||
+                (curr.val < prev.val && curr.val < curr.next.val)) {
+                
+                if (!criticalPoints.isEmpty()) {
+                    minDist = Math.min(minDist, index - criticalPoints.get(criticalPoints.size() - 1));
+                }
+                criticalPoints.add(index);
+            }
+            prev = curr;
+            curr = curr.next;
+            index++;
+        }
+
+        if (criticalPoints.size() < 2) return new int[]{-1, -1};
+
+        int maxDist = criticalPoints.get(criticalPoints.size() - 1) - criticalPoints.get(0);
+        return new int[]{minDist, maxDist};
     }
 }
