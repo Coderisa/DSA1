@@ -22,12 +22,14 @@ class Solution {
         ListNode curr= head;
         while(curr!=slow){
             adj.add(curr.val);
+            curr=curr.next;
         }
         int l= adj.size() -1, max=Integer.MIN_VALUE, sum=0;
         while(slow!=null){
             sum= slow.val+ adj.get(l);
             max=Math.max(max,sum);
             l--;
+            slow=slow.next;
         }
         return max;
     }
@@ -49,7 +51,7 @@ class Solution {
             adj.push(curr.val);
             curr= curr.next;
         }
-        int l= adj.size() -1, max=Integer.MIN_VALUE, sum=0;
+        int max=Integer.MIN_VALUE, sum=0;
         while(slow!=null){
             sum= slow.val+ adj.pop();
             max=Math.max(max,sum);
